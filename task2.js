@@ -1,6 +1,6 @@
 //QUESTION(1)
 let x = 6
-if (x %2 == 0)
+if (x %2 === 0)
 {
     console.log("number is  even:",x);
 }else{
@@ -20,32 +20,34 @@ if ((a > b && a > c)){
 }
 
 //QUESTION(3)
-for(i = 0;i<=100;i++)
-{
-    if(i % 5!= 0)
-    {
-        console.log("number:",i)
+for (let i = 1; i <= 100; i++) {
+    if (i % 5 !== 0) {
+        console.log("number:", i);
     }
 }
 
 //QUESTION(4)
-x = 20;
-y = 30;
-operation = "sub"
+let num1 = 20;
+let num2 = 30;
+let operation = "div"; 
 
-switch(operation) {
+switch (operation) {
     case "add":
-        console.log("number of addition is:",x + y);
+        console.log("Addition result:", num1 + num2);
         break;
     case "sub":
-        console.log("number of substraction is:",x - y);
+        console.log("Subtraction result:", num1 - num2);
         break;
     case "pro":
-        console.log("number of product is:",x * y);
+        console.log("Product result:", num1 * num2);
         break;
     case "div":
-        console.log("number of division is:",x / y);
+        if (num2 === 0) {
+            console.log("Cannot divide by zero!");
+    } else {
+            console.log("Division result:", num1 / num2);
+        }
         break;
     default:
-        console.log("Invelid operator");
+        console.log("Invalid operator");
 }
