@@ -11,8 +11,8 @@ console.log("Email:", email);
 console.log("Is Student:", isStudent);
 
 //QUESTION(2)
-Number = Number("25");
-const result = Number + 10;
+let num = Number("25");
+const result = num + 10;
 console.log(result);
 
 //QUESTION(3)
@@ -22,10 +22,13 @@ let y = 30;
 console.log(x,y);
 
 //QUESTION(4)
-a = 10;
-console.log(a == 8);
-console.log(a != 10);
-console.log(a == 10);
+let a = 10;
+
+if(a){
+    console.log("Truthy");
+} else {
+    console.log("Falsy");
+}
 
 
 
