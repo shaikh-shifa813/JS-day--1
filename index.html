@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Activity Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Smart Activity Tracker</h1>
+
+<!-- Input Section -->
+  <div class="input-section">
+    <input type="text" id="activityInput" placeholder="Enter activity">
+    <button id="addBtn" disabled>Add Activity</button>
+    <p id="error" class="error"></p>
+  </div>
+
+<!-- Stats Section -->
+  <div class="stats">
+    <p>Total: <span id="total">0</span></p>
+    <p>Completed: <span id="completed">0</span></p>
+    <p>Pending: <span id="pending">0</span></p>
+  </div>
+
+<!-- Activity Cards -->
+  <div id="activityList" class="activity-list"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
