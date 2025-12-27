@@ -13,24 +13,40 @@ const pendingEl = document.getElementById("pending");
 
 // disable 
 input.addEventListener("keyup", function () {
-  if (input.value.trim() == "") {
+  let value = input.value.trim();
+
+  if (value === "") {
+    error.innerText = "Please enter activity";
     addBtn.disabled = true;
-  } else {
+  } 
+  else if (value.length < 3) {
+    error.innerText = "Activity name is too short";
+    addBtn.disabled = true;
+  } 
+  else {
+    error.innerText = "";
     addBtn.disabled = false;
   }
 });
 
+
+
 // add activity button
 addBtn.addEventListener("click", function () {
+  let name = input.value.trim();
 
-let name = input.value.trim();
-
-  if (name == "") {
+  if (name === "") {
     error.innerText = "Please enter activity";
     return;
   }
 
+  if (name.length < 3) {
+    error.innerText = "Activity name is too short";
+    return;
+  }
+
   error.innerText = "";
+
 
 let activity = {
     name: name,
@@ -59,8 +75,8 @@ for (let i = 0; i < activities.length; i++) {
       card.className = "card completed";
     }
 
-    let title = document.createElement("h3");
-    title.innerText = activities[i].name;
+    let title = document.createElement("p");
+    title.innerText = "Name:" + activities[i].name;
 
     let status = document.createElement("p");
     status.innerText = "Status: " + activities[i].status;
@@ -112,3 +128,4 @@ function updateStats() {
   completedEl.innerText = completed;
   pendingEl.innerText = pending;
 }
+
