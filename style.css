@@ -1,32 +1,48 @@
 body {
        font-family: initial;
-       background: rgb(208, 163, 204);
+       background-image: url("image.jpg");
+       background-repeat: no-repeat ;
+       background-size: cover;
        padding: 20px;
      }
 
 h1 {
-     text-align: center; /*for head*/
+     text-align: center;
+    background-color: #d986c0;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
    }
 
 .input-section {       /*for input section*/
                 text-align: center;
-                margin-bottom: 20px;
+    margin-bottom: 40px;   /* spacing between add section & card list */
+    background: rgba(214, 179, 213, 0.8);
+    padding: 20px;
+    border-radius: 10px;
                }
 
-input {             
+input {              /* text b0x*/
        padding: 8px;
-       width: 200px;
-      }
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #98b7c4;
+}
+      
 
 button {
         padding: 8px 12px;
-        margin-left: 5px;
-        cursor: pointer;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color: #dc83ad;
+    color: white;
        }
 
 button:disabled {
-      background: #b98383;
-      cursor: not-allowed;
+     background: #8492c6;
+    cursor: not-allowed;
                 }
 
 .error {
@@ -36,25 +52,59 @@ button:disabled {
 
 .stats {           /* to show text in horizontal line */
           display: flex;
-          justify-content: space-around;
-          margin-bottom: 20px;
-       }
+    justify-content: space-around;
+    margin-bottom: 30px;
+    background-color: rgba(196, 221, 236, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+}
 
 .activity-list {   /* card in rows */
                 display: flex;
-                flex-wrap: wrap;
-                gap: 15px;
-               }
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+               
 
 .card {
-        background: rgb(210, 201, 206);
-        padding: 15px;
-        width: 220px;
-        border-radius: 8px;
-        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        background: rgb(192, 141, 192);
+    padding: 15px;
+    width: 220px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(222, 196, 196, 0.2);
+    transition: transform 0.2s;
       }
+.card:hover {
+    transform: scale(1.05);
+}
 
+/* Activity Title */
+.card h3 {
+    background-color: #e3aadf;
+    color: white;
+    padding: 6px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+/* Status badge */
+.status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    background-color: #8aa3c5;
+    color: white;
+}
+
+/* Completed card */
 .completed {
-            opacity: 0.5;
-            text-decoration: line-through;
-          }
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+
+.completed .status {
+    background-color: #b372bc;
+}
